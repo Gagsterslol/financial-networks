@@ -47,7 +47,17 @@ def test_mst_discrete_properties(mst):
     print(f"[Topology] Connected: {is_connected}, Edges: {e} (Expected: {v-1})")
 
 if __name__ == "__main__":
-    test_mst_discrete_properties( mst.mst)
     
+    np.random.seed(42)  
+    tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA']
+    dates = pd.date_range('2023-01-01', periods=100, freq='D')
+  
+    returns = pd.DataFrame(np.random.randn(100, 5) * 0.02, index=dates, columns=tickers)
     
-        
+    # Compute the MST
+    mst_graph = mst.mst(returns)
+    
+    # Run the test
+    test_mst_discrete_properties(mst_graph)
+
+
