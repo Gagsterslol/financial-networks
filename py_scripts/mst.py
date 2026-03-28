@@ -26,9 +26,12 @@ def clipping(returns, window):
     return C_final_df
 
 def mst (clipped_corr_matrix):
-
+   
+    clipped_corr_matrix = clipped_corr_matrix.fillna(0)
+    distance_matrix = np.sqrt(2 * (1 - clipped_corr_matrix))
+    distance_matrix = distance_matrix.fillna(0) #ultrametric distance
     #BUILDING MST
-    G = nx.from_pandas_adjacency(clipped_corr_matrix) 
+    G = nx.from_pandas_adjacency(distance_matrix) 
     mst = nx.minimum_spanning_tree(G)
 
     return mst
