@@ -12,3 +12,8 @@ I saw this article about how someone analyzed taxi rides to predict the price of
 
 How can we use multiple layer architecture and apply it to supply chains to predict manufacturing capabilities of companies.
 
+Looking deeper into the subject, I found the existence of Temporal Multiplex Directed Networks. 
+It's like if I took a graph with nodes and egdges, made that graph evolved through time and had different types of edges. This results in the layered architecture. 
+
+For the semiconductor industry, the layers considered were: the underlying price, the ownership and the flow of revenue between companies. I considered patents relationships, but it's hard to obtain up to date info on that.
+
